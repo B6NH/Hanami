@@ -5,7 +5,9 @@
     <%= favicon %>
   </head>
   <body>
-    <h1>Bookshelf</h1>
+    <h1>Database</h1>
+    <%= link_to 'Books', routes.books_path %> |
+    <%= link_to 'Movies', routes.movies_path %>
     <%= yield %>
   </body>
 </html>

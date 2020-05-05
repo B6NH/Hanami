@@ -1,0 +1,15 @@
+<h2>All movies</h2>
+
+<% if movies.any? %>
+  <div id="movies">
+    <% movies.each do |movie| %>
+      <div class="movie">
+        <h2><%= movie.title %></h2>
+        <p><%= movie.year %></p>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p class="placeholder">There are no movies yet.</p>
+<% end %>
+<a href="/movies/new">New movie</a>

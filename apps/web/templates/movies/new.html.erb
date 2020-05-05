@@ -1,0 +1,30 @@
+<h2>Add movie</h2>
+
+<% unless params.valid? %>
+  <div class="errors">
+    <h3>There was a problem with your submission</h3>
+    <ul>
+      <% params.error_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%=
+  form_for :movie, routes.movies_path do
+    div class: 'input' do
+      label      :title
+      text_field :title
+    end
+
+    div class: 'input' do
+      label      :year
+      text_field :year
+    end
+
+    div class: 'controls' do
+      submit 'Create movie'
+    end
+  end
+%>

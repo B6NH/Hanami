@@ -6,3 +6,5 @@
 
 root to: 'home#index'
 resources :books, only: [:index, :new, :create]
+resources :movies, only: [:index, :new, :create]
+post '/movies', to: 'movies#create'
