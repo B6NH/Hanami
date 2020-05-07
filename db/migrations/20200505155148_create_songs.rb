@@ -3,7 +3,7 @@ Hanami::Model.migration do
     create_table :songs do
       primary_key :id
 
-      foreign_key :singer_id, :singers, on_delete: :cascade
+      foreign_key :singer_id, :singers, on_delete: :cascade, null: false
 
       column :title, String, null: false
 

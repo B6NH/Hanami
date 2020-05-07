@@ -1,0 +1,17 @@
+<h2>All Songs</h2>
+
+<% if songs.any? %>
+  <div id="songs">
+
+    <ul>
+      <% songs.each do |song| %>
+        <div class="singer">
+          <li><%= song.title %></li>
+        </div>
+      <% end %>
+    </ul>
+
+  </div>
+<% else %>
+  <p class="placeholder">There are no songs yet.</p>
+<% end %>

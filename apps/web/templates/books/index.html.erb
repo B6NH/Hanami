@@ -1,11 +1,14 @@
-<h2>All books</h2>
+<h2>All Books</h2>
 
 <% if books.any? %>
   <div id="books">
     <% books.each do |book| %>
       <div class="book">
-        <h2><%= book.title %></h2>
-        <p><%= book.author %></p>
+        <ul>
+          <li>
+            <%= book.title %>
+          </li>
+        </ul>
       </div>
     <% end %>
   </div>

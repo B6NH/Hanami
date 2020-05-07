@@ -1,0 +1,22 @@
+<h2>All Singers</h2>
+
+<% if singers.any? %>
+  <div id="singers">
+
+    <ul>
+      <% singers.each do |singer| %>
+        <div class="singer">
+          <li>
+            <%= link_to singer.name,
+                routes.singer_path(singer.id) %>
+          </li>
+        </div>
+      <% end %>
+    </ul>
+
+  </div>
+<% else %>
+  <p class="placeholder">There are no singers yet.</p>
+<% end %>
+
+<a href="/singers/new">New singer</a>

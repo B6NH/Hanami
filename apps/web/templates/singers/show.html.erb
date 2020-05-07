@@ -1,0 +1,15 @@
+
+
+<h2>Name</h2>
+<p>
+  <%= singer.name %>
+</p>
+
+<h2>Songs</h2>
+<% songs.each do |song| %>
+  <div class="song">
+    <li>
+      <%= song.title %>
+    </li>
+  </div>
+<% end %>
