@@ -9,3 +9,5 @@ resources :books, only: [:index, :new, :create]
 resources :movies, only: [:index, :new, :create]
 resources :singers, only: [ :index, :show, :new, :create ]
 resources :songs, only: :index
+get '/songs/new', to: 'songs#new'
+post '/songs', to: 'songs#create'

@@ -1,9 +1,16 @@
 RSpec.describe Web::Controllers::Singers::Create, type: :action do
   let(:action) { described_class.new }
-  let(:params) { Hash[] }
+  let(:repository) { SingerRepository.new }
+  let(:params) { Hash[singer:{ name:'Katie Melua' }] }
 
   it 'is successful' do
     response = action.call(params)
-    expect(response[0]).to eq 200
+
+    singer = repository.last
+
+    expect(singer.id).to_not be_nil
+    expect(singer.name).to eq(params.dig(:singer, :name))
+
+    expect(response[0]).to eq 302
   end
 end

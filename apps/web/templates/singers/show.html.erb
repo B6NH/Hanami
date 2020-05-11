@@ -6,10 +6,17 @@
 </p>
 
 <h2>Songs</h2>
-<% songs.each do |song| %>
-  <div class="song">
-    <li>
-      <%= song.title %>
-    </li>
-  </div>
-<% end %>
+<ul>
+  <% songs.each do |song| %>
+    <div class="song">
+      <li>
+        <%= song.title %>
+      </li>
+    </div>
+  <% end %>
+</ul>
+
+<form action="/songs/new" method="get">
+    <input type="hidden" name="singer_id" value=<%= singer.id %> />
+    <button>Add Song</button>
+</form>
