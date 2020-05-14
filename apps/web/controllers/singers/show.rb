@@ -9,7 +9,7 @@ module Web
 
         def call(params)
           @singer = SingerRepository.new.find_with_songs(params[:id])
-          @songs = singer.songs
+          @songs = singer&.songs
         end
       end
     end
