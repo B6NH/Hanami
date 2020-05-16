@@ -7,7 +7,7 @@ module Web
         expose :books
 
         def call(params)
-          @books = BookRepository.new.all
+          @books = BookRepository.new.all_sorted.to_a
         end
       end
     end

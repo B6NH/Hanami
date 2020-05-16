@@ -1,0 +1,1 @@
+SongRepository.enable_pagination!

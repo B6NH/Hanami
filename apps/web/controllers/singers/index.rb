@@ -7,7 +7,7 @@ module Web
         expose :singers
 
         def call(params)
-          @singers = SingerRepository.new.all
+          @singers = SingerRepository.new.all_sorted.to_a
         end
       end
     end

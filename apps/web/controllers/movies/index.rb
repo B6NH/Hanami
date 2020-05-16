@@ -7,7 +7,7 @@ module Web
         expose :movies
 
         def call(params)
-          @movies = MovieRepository.new.all
+          @movies = MovieRepository.new.all_sorted.to_a
         end
       end
     end

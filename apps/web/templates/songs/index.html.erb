@@ -11,10 +11,16 @@
       <% end %>
     </ul>
 
+    <nav>
+      <a href="<%= previous_page_path(:songs)%>">Previous</a>
+      <a href="<%= next_page_path(:songs)%>">Next</a>
+    </nav>
+
   </div>
 <% else %>
   <p class="placeholder">There are no songs yet.</p>
 <% end %>
 
+<br>
 
-<a href="/songs/new">New song</a>
+<%= link_to 'New Song', routes.new_song_path %>

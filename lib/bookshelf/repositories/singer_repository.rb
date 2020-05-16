@@ -3,6 +3,10 @@ class SingerRepository < Hanami::Repository
     has_many :songs
   end
 
+  def all_sorted
+    singers.order { name.asc }
+  end
+
   def create_with_songs(data)
     assoc(:songs).create(data)
   end
