@@ -7,7 +7,9 @@
       <% movies.each do |movie| %>
         <div class="movie">
           <li>
-            <%= movie.title %>
+
+            <%= link_to movie.title,
+                routes.movy_path(movie.id) %>
           </li>
         </div>
       <% end %>

@@ -6,6 +6,6 @@
 
 root to: 'home#index'
 resources :books, only: [ :index, :new, :create, :show ]
-resources :movies, only: [ :index, :new, :create]
+resources :movies, only: [ :index, :new, :create, :show ]
 resources :singers, only: [ :index, :new, :create, :show ]
 resources :songs, only: [ :index, :new, :create ]

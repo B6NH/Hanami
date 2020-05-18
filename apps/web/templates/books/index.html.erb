@@ -1,12 +1,23 @@
 <h2>All Books</h2>
 
 <% if books.any? %>
+
+  <% if order=='desc' %>
+    <%= link_to 'Asc',
+        routes.books_path + '?order=asc' %>
+  <% else %>
+    <%= link_to 'Desc',
+        routes.books_path + '?order=desc' %>
+  <% end %>
+
+
   <div id="books">
     <ul>
       <% books.each do |book| %>
         <div class="book">
             <li>
-              <%= book.title %>
+              <%= link_to book.title,
+                  routes.book_path(book.id) %>
             </li>
         </div>
       <% end %>

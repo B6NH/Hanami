@@ -5,9 +5,11 @@ module Web
         include Web::Action
 
         expose :books
+        expose :order
 
         def call(params)
-          @books = BookRepository.new.all_sorted.to_a
+          @books = BookRepository.new.all_sorted(params[:order]).to_a
+          @order = params[:order]
         end
       end
     end
